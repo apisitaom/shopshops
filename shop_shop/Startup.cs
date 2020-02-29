@@ -37,6 +37,7 @@ namespace shop_shop
                 sp.GetRequiredService<IOptions<BookstoreDatabaseSettings>>().Value);
 
             services.AddSingleton<BookService>();
+            services.AddSingleton<AddressService>();
 
             services.AddControllers()
                         .AddNewtonsoftJson(options => options.UseMemberCasing());
