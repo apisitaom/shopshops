@@ -38,6 +38,13 @@ namespace shop_shop
 
             services.AddSingleton<BookService>();
             services.AddSingleton<AddressService>();
+            services.AddSingleton<OptionService>();
+            services.AddSingleton<PaymentService>();
+            services.AddSingleton<ProductService>();
+            services.AddSingleton<RecriveService>();
+            services.AddSingleton<SellerService>();
+            services.AddSingleton<ShippingService>();
+            services.AddSingleton<UserService>();
 
             services.AddControllers()
                         .AddNewtonsoftJson(options => options.UseMemberCasing());
