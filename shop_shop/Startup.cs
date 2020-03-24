@@ -36,6 +36,7 @@ namespace shop_shop
             services.AddSingleton<IBookstoreDatabaseSettings>(sp =>
                 sp.GetRequiredService<IOptions<BookstoreDatabaseSettings>>().Value);
 
+
             services.AddSingleton<BookService>();
             services.AddSingleton<AddressService>();
             services.AddSingleton<OptionService>();

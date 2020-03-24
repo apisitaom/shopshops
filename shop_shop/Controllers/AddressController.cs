@@ -18,5 +18,12 @@ namespace shop_shop.Controllers
         [HttpGet("lists")]
         public ActionResult<List<Address>> Get() =>
             _addressService.Alladdress();
+        [HttpPost("add")]
+        public ActionResult<Address> Create(Address address)
+        {
+            _addressService.Create(address);
+
+            return address;
+        }
     }
 }
