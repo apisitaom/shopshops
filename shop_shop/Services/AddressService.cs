@@ -9,12 +9,12 @@ namespace shop_shop.Services
     {
         private readonly IMongoCollection<Address> _address;
 
-        public AddressService(IBookstoreDatabaseSettings settings)
+        public AddressService(IAddressstoreDatabaseSettings settings)
         {
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
 
-            _address = database.GetCollection<Address>(settings.BooksCollectionName);
+            _address = database.GetCollection<Address>(settings.AddressCollectionName);
         }
 
         public List<Address> Alladdress() =>

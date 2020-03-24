@@ -68,7 +68,7 @@ namespace shop_shop.Controllers
 
             _bookService.Remove(book.bookId);
 
-            return NoContent();
+            return Ok("delete book already");
         }
     }
 }

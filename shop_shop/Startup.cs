@@ -1,15 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using shop_shop.Models;
 using shop_shop.Services;
@@ -36,6 +29,11 @@ namespace shop_shop
             services.AddSingleton<IBookstoreDatabaseSettings>(sp =>
                 sp.GetRequiredService<IOptions<BookstoreDatabaseSettings>>().Value);
 
+            services.Configure<AddresstoreDatabaseSettings>(
+                Configuration.GetSection(nameof(AddresstoreDatabaseSettings)));
+
+            services.AddSingleton<IAddressstoreDatabaseSettings>(sp =>
+                sp.GetRequiredService<IOptions<AddresstoreDatabaseSettings>>().Value);
 
             services.AddSingleton<BookService>();
             services.AddSingleton<AddressService>();
